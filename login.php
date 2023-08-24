@@ -9,7 +9,10 @@ if (isset($_POST['submit'])) {
     $count = mysqli_num_rows($result);
 
     if ($count == 1) {
-        header("Location: welcome.php");
+        $detailsSql = "SELECT * FROM details WHERE email = '$username'";
+        $detailsResult = mysqli_query($conn, $detailsSql);
+        $userDetails = mysqli_fetch_assoc($detailsResult);
+        header("Location: welcome.php?name={$userDetails['name']}&email={$userDetails['email']}&phone_number={$userDetails['phone_number']}&company={$userDetails['company']}");
     } else {
         echo '<script>
             window.location.href = "index.php";

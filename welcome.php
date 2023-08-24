@@ -1,3 +1,13 @@
+<?php
+include('connection.php');
+
+if (isset($_GET['name']) && isset($_GET['email']) && isset($_GET['phone_number']) && isset($_GET['company'])) {
+    $name = $_GET['name'];
+    $email = $_GET['email'];
+    $ph_no = $_GET['phone_number'];
+    $company = $_GET['company'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +20,14 @@
 
 <body>
     <h1>Login Successful!!!</h1>
+<br>
+<br>
+<br>
+    <h1>Welcome, <?php echo $_GET['name']; ?>!</h1>
+    <p>Email: <?php echo $_GET['email']; ?></p>
+    <p>Phone Number: <?php echo $_GET['phone_number']; ?></p>
+    <p>Company: <?php echo $_GET['company']; ?></p>
+
 </body>
 
 </html>
