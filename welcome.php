@@ -24,6 +24,8 @@ if (isset($_GET['name']) && isset($_GET['email']) && isset($_GET['phone_number']
 <br>
 <br>
     <h1>Welcome, <?php echo $_GET['name']; ?>!</h1>
+    <h2>here are your details:</h2>
+    <br>
     <p>Email: <?php echo $_GET['email']; ?></p>
     <p>Phone Number: <?php echo $_GET['phone_number']; ?></p>
     <p>Company: <?php echo $_GET['company']; ?></p>
